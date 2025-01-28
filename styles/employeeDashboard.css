@@ -1,0 +1,110 @@
+body{
+    background-color: #FFFFFF;
+}
+
+.container{
+    background-color: #F7F7F7;
+}
+
+.emp-reg-header-cnt{
+    width: 1920px;
+    height: 80px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+.logo{
+    padding-top:20px ;
+    margin-left:100px
+    
+}
+.emp{
+    margin-left: 146px;
+    margin-top: -64px;
+    color: #82A70C;
+}
+.emp-details{
+    margin-left:150px;
+    width: 217px;
+    height: 37px;
+    text-align: left;
+    font: normal normal bold 28px/25px Roboto;
+    letter-spacing: 0px;
+    color: #42515F;
+    opacity: 1;
+}
+.search{
+    margin-top: -40px;
+    margin-left: 960px;
+    
+}
+.addUser{
+    
+    margin-top: -40px;
+    margin-left: 1200px;
+}
+.add-user-link{
+    text-decoration: none;
+    color: #82A70C;
+}
+.emp-reg-main-cnt {
+    border-radius: 3px 3px 0px 0px;
+    background-color: #42515F;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.emp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.emp-table th, .emp-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+
+
+.emp-table td {
+    background-color: #FFFFFF;
+    color: black;
+}
+
+.emp-table td button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.editBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.deleteBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+.editBtn:hover, .deleteBtn:hover {
+    opacity: 0.8;
+}
+
+.actionsDashboard {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;  /* Makes the image circular */
+}

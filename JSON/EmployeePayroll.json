@@ -1,0 +1,21 @@
+{
+  "employees": [
+    {
+      "id": "3014",
+      "name": "John Doe",
+      "gender": "male",
+      "salary": "6 LPA",
+      "departments": [
+        "HR",
+        "Engineer"
+      ],
+      "profileImage": "img1",
+      "startDate": {
+        "day": "Monday",
+        "month": "January",
+        "year": "2024"
+      },
+      "notes": "New employee"
+    }
+  ]
+}

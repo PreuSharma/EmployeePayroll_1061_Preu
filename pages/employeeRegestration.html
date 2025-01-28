@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll</title>
+    <link rel="stylesheet" href="../styles/employeeRegistration.css">
+</head>
+<body>
+    <div class="container">
+        <div class="emp-reg-header-cnt">
+            <div class="logo">
+                <a href="./employeeDashboard.html">
+                <img src="../assests/logo.jpg"></a>
+            </div>
+
+            <div class="emp">
+                <h4>EMPLOYEE</h4>
+                <h4 class="brPayroll">PAYROLL</h4>
+            </div>
+        </div>
+
+        <div class="emp-dash-main-cnt">
+            <div class="formTitle">
+                <h1>Employee Payroll Form</h1>
+            </div>
+            
+            <div class="form">
+                <form id="employeeForm">
+
+                    <div class="formName">
+                        <label>Name:</label>
+                        <div class="formNameText"><input type="text" class="textbox" id="name" required></div>
+                    </div>
+
+                    <div class="formProfileimg">
+                        <label>Profile Image:</label>
+                        <div class="profileimg-1"><input type="radio" name="profileImage" value="img1"><img src="../assests/img1.jpg" class="circular1"></div>
+                        <div class="profileimg-2"><input type="radio" name="profileImage" value="img2"><img src="../assests/img2.jpg" class="circular2"></div>
+                        <div class="profileimg-3"><input type="radio" name="profileImage" value="img3"><img src="../assests/img3.jpg" class="circular3"></div>
+                        <div class="profileimg-4"><input type="radio" name="profileImage" value="img4"><img src="../assests/img4.jpg" class="circular4"></div>
+                    </div>
+
+                    <div class="formGender">
+                        <label>Gender:</label>
+                        <div class="genderMale"><input type="radio" name="gender" value="male"><h6>Male</h6></div>
+                        <div class="genderFemale"><input type="radio" name="gender" value="female"><h6>Female</h6></div>
+                    </div>
+
+                    <div class="formDepartment">
+                        <label>Department:</label>
+                        <div class="DepartmentHR"><input type="checkbox" name="departments" value="HR">HR</div>
+                        <div class="DepartmentSales"><input type="checkbox" name="departments" value="Sales">Sales</div>
+                        <div class="DepartmentFinance"><input type="checkbox" name="departments" value="Finance">Finance</div>
+                        <div class="DepartmentEngineer"><input type="checkbox" name="departments" value="Engineer">Engineer</div>
+                        <div class="DepartmentOthers"><input type="checkbox" name="departments" value="Others">Others</div>
+                    </div>
+
+                    <div class="formSalary">
+                        <label>Salary:</label>
+                        <div class="selectSalary">
+                            <select id="salary">
+                                <option>Select Salary</option>
+                                <option value="4 LPA">4 LPA</option>
+                                <option value="5 LPA">5 LPA</option>
+                                <option value="6 LPA">6 LPA</option>
+                                <option value="7 LPA">7 LPA</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="formStartDate">
+                        <label>Start Date:</label>
+                        <div class="startDate">
+                            <select id="startDay">
+                                <option>Day</option>
+                                <option>Monday</option>
+                                <option>Tuesday</option>
+                                <option>Wednesday</option>
+                                <option>Thursday</option>
+                                <option>Friday</option>
+                            </select>
+                        </div>
+
+                        <div class="startMonth">
+                            <select id="startMonth">
+                                <option>Month</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                        </div>
+
+                        <div class="startYear">
+                            <select id="startYear">
+                                <option>Year</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="notes">
+                        <label>Notes:</label>
+                        <div class="notesTextArea">
+                            <textarea class="textarea" id="notes"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="emp-reg-btn-cnt">
+                        <div class="regCancelButton"><button class="btn" type="button" onclick="window.location.href='employeeDashboard.html'">Cancel</button></div>
+                        <div class="regSubmitButton"><button class="btn" type="submit">Submit</button></div>
+                        <div class="regResetButton"><button class="btn" type="reset">Reset</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#employeeForm").on("submit", function(e) {
+                e.preventDefault(); // Prevent the default form submit
+
+                const employeeData = {
+                    "name": $("#name").val(),
+                    "gender": $("input[name='gender']:checked").val(),
+                    "salary": $("#salary").val(),
+                    "departments": $("input[name='departments']:checked").map(function() {
+                        return this.value;
+                    }).get(),
+                    "profileImage": $("input[name='profileImage']:checked").val(),
+                    "startDate": {
+                        "day": $("#startDay").val(),
+                        "month": $("#startMonth").val(),
+                        "year": $("#startYear").val()
+                    },
+                    "notes": $("#notes").val()
+                };
+
+                // POST request to add new employee to JSON Server
+                $.ajax({
+                    url: 'http://localhost:5000/employees', // JSON Server endpoint
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(employeeData), // Send data as JSON
+                    success: function(response) {
+                        console.log('Employee added to JSON Server:', response);
+                        alert("Employee added successfully!");
+                    },
+                    error: function(error) {
+                        console.error('Error adding employee:', error);
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="../js/employeeRegistration.js"></script>
+</body>
+</html>

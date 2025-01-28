@@ -1,0 +1,168 @@
+body{
+    background-color: #FFFFFF;
+}
+
+.container{
+    background-color: #F7F7F7;
+}
+
+.emp-reg-header-cnt{
+    width: 1920px;
+    height: 80px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+.logo{
+    padding-top:20px ;
+    margin-left:100px
+}
+.brPayroll{
+    margin-top: -20px;
+    color: #42515F;
+}
+.emp{
+    margin-left: 146px;
+    margin-top: -64px;
+    color: #82A70C;
+}
+
+.emp-dash-main-cnt{
+    margin-top: 20px;
+    width: 700px;
+    height: 700px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    padding-left: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 250px;
+}
+
+.formTitle{
+    color: #42515F;
+}
+
+.formName{
+    color: #42515F;
+    
+}
+.formNameText{
+    margin-top:-18px;
+    margin-left: 70px;
+
+}
+ /* .textbox{
+    border: 50px 90px;
+}  */
+.formProfileimg{
+    color: #42515F;
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+.circular1{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.circular2{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.circular3{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.circular4{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.radio{
+    margin-top: 10px;
+}
+
+.formGender{
+    display: flex;
+    color:#42515F
+}
+.genderMale{
+    display: flex;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+.genderFemale{
+    display: flex;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+.formDepartment{
+    display:flex;
+    margin-bottom: 20px;
+    color: #42515F;
+}
+
+.DepartmentHR{
+    margin-left: 10px;
+}
+.DepartmentSales{
+    margin-left: 20px;
+}
+.DepartmentFinance{
+    margin-left: 20px;
+}
+.DepartmentEngineer{
+    margin-left: 20px;
+}
+.DepartmentOthers{
+    margin-left: 20px;
+}
+
+.formSalary{
+    color: #42515F;
+    margin-bottom: 20px;
+}
+.selectSalary{
+    margin-top: -17px;
+    margin-left: 70px;
+}
+.formStartDate{
+    display: flex;
+    color: #42515F;
+    margin-bottom: 20px;
+}
+.startDate{
+    margin-left: 10px;
+}
+.startMonth{
+    margin-left: 20px;
+}
+.startYear{
+    margin-left: 20px;
+}
+.notes{
+    display: flex;
+    color: #42515F;
+}
+.textarea{
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.emp-reg-btn-cnt{
+    display: flex;
+}
+.btn{
+    padding: 5px 20px;
+    color: #42515F;
+}
+.regSubmitButton{
+    margin-left: 200px;
+}
+.regResetButton{
+    margin-left: 20px;
+}
